@@ -13,5 +13,9 @@ const gameServer = new colyseus.Server({
   server: http.createServer(app)
 });
 
+app.get('/', function (req, res) {
+  res.send('GET request to the homepage')
+})
+
 gameServer.listen(port);
 gameServer.define("room", MyRoom);
